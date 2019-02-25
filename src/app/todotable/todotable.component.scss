@@ -1,0 +1,54 @@
+.todo{
+    &-item {
+        padding: 15px 25px;
+        margin-bottom: 20px;
+        border-radius: 2rem;
+        box-shadow: 0px 0px 40px 0px rgba(0, 0, 255, 0.19);
+        &__delete {
+            padding-left: 15px;
+            a {
+                text-decoration: none;
+                &:hover { 
+                    color: #3950ab;
+                }
+
+            }
+        }
+    }
+    
+}
+
+.todo-writer{
+    display: flex;
+
+    &__input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right-color: transparent;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 1 100%;
+        max-width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    &__btn {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        margin-left: -2px;
+        outline: none;
+        border-color: #2f2382;
+        background: #2f2382;
+        color: #fff;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 10%;
+        flex: 0 1 10%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+        &:hover { 
+            background: #3950ab;
+            border-color: #3950ab;
+        }
+    }
+}

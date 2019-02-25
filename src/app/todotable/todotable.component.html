@@ -1,0 +1,20 @@
+<section>  
+  <div class="container">
+    <p>I want to ...</p>
+    <div class="todo-writer">
+      <input type="text" class="todo-writer__input" placeholder="type something..." name="" #todoInput (keydown.enter)="addItem(todoInput.value)">
+      <button role="button" class="todo-writer__btn btn" (click)="addItem(todoInput.value)">add</button>
+    </div>  
+      
+    
+    
+    <div class="todo mb-5 mt-5">
+      <div class="todo-item d-flex fade show" *ngFor="let case of cases; let i = index">
+        <div  class="todo-item__todo">{{case.whatTodo}}</div>
+        <div class="todo-item__delete ml-auto">
+          <a href="#" (click)="removeItem($event, i)">x</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

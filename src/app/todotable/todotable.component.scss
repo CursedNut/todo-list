@@ -3,15 +3,90 @@
         padding: 15px 25px;
         margin-bottom: 20px;
         border-radius: 2rem;
-        box-shadow: 0px 0px 40px 0px rgba(0, 0, 255, 0.19);
+        box-shadow: 0px 0px 40px 0px rgb(176, 232, 236);
+        transition: 1s;
+        a{
+            text-decoration: none;
+        }
+        &.marked {
+            box-shadow: 0px 0px 40px 0px #ffadad;
+
+            .todo-item__mark { 
+                transition: 1s;   
+                a {
+                    color: #e2667b;
+                    &:hover { 
+                        color: #3950ab;
+                    }
+                } 
+              
+            }
+        }
+        &.deleted {
+            box-shadow: 0px 0px 40px 0px #d2d2d2;
+            
+            .todo-item__todo {     
+                transition: 1s;        
+                text-decoration: line-through;
+                color: #ddd;
+            }
+            .todo-item__mark { 
+                transition: 1s;   
+                a {
+                    color: #ddd;
+                    &:hover { 
+                        color: #aaa;
+                    }   
+                } 
+              
+            }
+            .todo-item__return {  
+                display: inline-block;   
+                transition: 1s;        
+                color: #ddd;
+                &:hover { 
+                    color: #aaa;
+                }
+            }
+            .todo-item__delete { 
+                transition: 1s;
+                a{
+                    color: #ddd;
+                    &:hover { 
+                        color: #aaa;
+                    }
+    
+                }            
+                
+            }
+            
+        }
+        &__return {
+            display: none;
+            padding-right: 5px; 
+            font-weight: bold;           
+                &:hover { 
+                    color: #e2667b
+                }
+        }
+        &__mark {
+            padding-right: 15px;
+            a {
+                transform: scale(2,2);
+                display: inline-block;
+                vertical-align: middle;
+                &:hover { 
+                    color: #e266d7
+                }
+
+            }
+        }
         &__delete {
             padding-left: 15px;
             a {
-                text-decoration: none;
                 &:hover { 
                     color: #3950ab;
                 }
-
             }
         }
     }

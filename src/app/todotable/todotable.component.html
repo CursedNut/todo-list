@@ -1,18 +1,22 @@
 <section>  
   <div class="container">
     <p>I want to ...</p>
-    <div class="todo-writer">
-      <input type="text" class="todo-writer__input" placeholder="type something..." name="" #todoInput (keydown.enter)="addItem(todoInput.value)">
-      <button role="button" class="todo-writer__btn btn" (click)="addItem(todoInput.value)">add</button>
-    </div>  
+    <form class="todo-writer" (submit)="addItem($event,todoInput)" >
+      <input type="text" class="todo-writer__input" placeholder="type something..." #todoInput >
+      <input type="submit" class="todo-writer__btn btn" value="add" > 
+    </form>
       
-    
-    
     <div class="todo mb-5 mt-5">
-      <div class="todo-item d-flex fade show" *ngFor="let case of cases; let i = index">
+      <div class="todo-item d-flex fade show {{case.status}}" *ngFor="let case of cases; let i = index">
+        <div class="todo-item__mark">
+            <a href="#" (click)="tickItem($event, i)">&bull;</a>
+            {{case.priority}}
+        </div>
         <div  class="todo-item__todo">{{case.whatTodo}}</div>
         <div class="todo-item__delete ml-auto">
-          <a href="#" (click)="removeItem($event, i)">x</a>
+          <a href="#" class="todo-item__return" (click)="returnItem($event, i)">&#8635;</a>
+          <a href="#" (click)="removeItem($event, i)">&#10008;</a>
+          
         </div>
       </div>
     </div>

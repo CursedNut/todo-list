@@ -1,5 +1,12 @@
 header {
     padding: 10px 0;
-    background: #2f2382;
+    //background: #2f2382;
     color: #fff;
+
+    display: flex;
+    align-items: center;
+
+    background: url('images/fd796b086cb82fea063cd6ecafb73caf.jpg') 50% 50% no-repeat;
+    background-size: cover;
+    min-height: 500px 
 }
